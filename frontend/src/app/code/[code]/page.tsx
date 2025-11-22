@@ -32,7 +32,6 @@ export default function LinkStatsPage({
     try {
       setLoading(true);
       const data = await getLinkStats(code);
-      console.log("link is", data);
       setLink(data);
       setError(null);
     } catch (err) {
@@ -189,7 +188,6 @@ export default function LinkStatsPage({
 
       <div className="mt-6">
         <a
-          onClick={() => console.log("your link is", link)}
           href={`${process.env.NEXT_PUBLIC_BASE_URL}/${link.code}`}
           target="_blank"
           rel="noopener noreferrer"

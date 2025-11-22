@@ -6,7 +6,6 @@ const { generateRandomCode, isValidCode } = require("../utils/helpers");
 const createLink = async (req, res) => {
   try {
     const { url, code } = req.body;
-    console.log("req.body", req.body);
 
     // Validate URL
     if (!url) {

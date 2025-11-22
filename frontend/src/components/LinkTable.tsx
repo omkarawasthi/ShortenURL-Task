@@ -20,7 +20,6 @@ export default function LinkTable({ links, onDelete, searchTerm }: LinkTableProp
     );
   }, [links, searchTerm]);
 
-  console.log("filtered links :", filteredLinks)
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -35,7 +34,6 @@ export default function LinkTable({ links, onDelete, searchTerm }: LinkTableProp
 
   const handleDelete = (code: string) => {
     // Debugging: log the code parameter
-    console.log('Delete button clicked with code:', code);
     onDelete(code);
   };
 

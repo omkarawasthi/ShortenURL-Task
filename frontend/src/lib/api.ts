@@ -35,17 +35,16 @@ export const getAllLinks = async (): Promise<Link[]> => {
     throw new Error('Failed to fetch links');
   }
   const data = await response.json();
-  console.log("response is ", data)
+
   return data.links;
 };
 
 export const getLinkStats = async (code: string): Promise<Link> => {
   // Debugging: log the code parameter
-  console.log('Fetching stats for code:', code);
+
   
   const response = await fetch(`${BASE_URL}/api/links/${code}`);
     const data = await response.json();
-    console.log("data is ", data)
 
   if (!response.ok) {
     const errorData = await response.json();
@@ -57,7 +56,6 @@ export const getLinkStats = async (code: string): Promise<Link> => {
 
 export const deleteLink = async (code: string): Promise<void> => {
   // Debugging: log the code parameter
-  console.log('Deleting link with code:', code);
   
   const response = await fetch(`${BASE_URL}/api/links/${code}`, {
     method: 'DELETE',

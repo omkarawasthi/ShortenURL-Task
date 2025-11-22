@@ -28,7 +28,6 @@ export default function Dashboard() {
 
   const handleDelete = async (code: string) => {
     // Debugging: log the code parameter
-    console.log('handleDelete called with code:', code);
     
     if (!confirm('Are you sure you want to delete this link?')) {
       return;
